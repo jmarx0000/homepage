@@ -1,0 +1,45 @@
+/* src/Pages/ContactsListPage.css */
+
+.contacts-list-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.contacts-list-table {
+    width: 80%; /* Adjust as needed */
+    border-collapse: collapse;
+    margin: 0 auto; /* Center the table */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.contacts-list-table th, .contacts-list-table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px; /* Add padding for better spacing */
+    text-align: left;
+}
+
+.contacts-list-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    text-transform: uppercase; /* Make header text uppercase */
+    letter-spacing: 0.1em; /* Add letter spacing */
+}
+
+.contacts-list-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray for even rows */
+}
+
+.contacts-list-table tr:nth-child(odd) {
+    background-color: #ffffff; /* White for odd rows */
+}
+
+.contacts-list-table tr:hover {
+    background-color: rgb(119, 228, 255); /* Add hover effect */
+}
+
+.contacts-list-table td {
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
