@@ -7,7 +7,10 @@ const HomePage = () => {
     <div className="centered"> {/* Use a class name from your App.css */}
       <h1 className="header">Nexus</h1> {/* Apply a CSS class for header */}
       <Link to="/add-contact">
-        <button className="button-secondary">Add New Contact</button> {/* Use CSS for button */}
+        <button className="button-primary" style={{ width: '200px', margin: '20px' }}>Add New Contact</button> 
+      </Link>
+      <Link to="/all-contacts">
+        <button className="button-primary" style={{ width: '200px', margin: '20px' }}>All Contacts</button> 
       </Link>
     </div>
   );

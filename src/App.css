@@ -1,7 +1,12 @@
 /* Define CSS variables in the :root selector */
 :root {
-  --primary-color: #3498DB; /* Your primary color */
-  --secondary-color: #2980B9; /* A secondary color for hover effects or accents */
+  --primary-color: #003366; /* Your primary color */
+  --secondary-color: #63c6ff; /* A secondary color */
+  --accent-color: #e7a1fc; /* Accent color */
+  --background-color: #FFFFFF; /* Background color */
+  --primary-text-color: #2C3E50; /* Primary text color */
+  --primary-button-hover: #9cd7ff; /* A secondary color for hover effects or accents */
+  
 }
 
 /* Styling for header */
@@ -21,6 +26,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin: 10px;
 }
 
 .button-secondary:hover {
@@ -53,6 +59,7 @@ h2 {
   text-align: center;
   color: var(--primary-color);
   margin-bottom: 20px;
+  font-size: 36px; /* Added attribute to make the font size bigger */
 }
 
 /* Styling for form labels */
@@ -76,10 +83,10 @@ h2 {
 }
 
 /* Styling for form submit button */
-.contact-form-container button[type="submit"] {
+.button-primary {
   width: 100%;
   padding: 10px;
-  background-color: #3498DB;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: 5px;
@@ -88,8 +95,27 @@ h2 {
   transition: background-color 0.3s ease;
 }
 
-.contact-form-container button[type="submit"]:hover {
-  background-color: #2980B9;
+.button-primary:hover {
+  background-color: var(--primary-button-hover);
+  color: rgb(77, 77, 77);
+}
+
+/* Styling for form submit button */
+.button-cancel {
+  width: 100%;
+  padding: 10px;
+  background-color: #e74c3c; /* Red color for cancel button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.button-cancel:hover {
+  background-color: #c0392b; /* Darker red for hover effect */
 }
 
 /* Styling for date input field */

@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { db } from '../Configuration/firebase'; 
+import { collection, addDoc } from 'firebase/firestore';
 
-const AddContactForm = () => {
+
+const AddContactForm = ({cancelRoute}) => {
   // Form state
   const [contact, setContact] = useState({
-    fullName: '',
-    firmName: '',
-    position: '',
-    lastReachOut: '',
-    email: '',
-    phoneNumber: '', // Add phone number field
-    notes: ''
+    fullName: 'Jordan Marx',
+    firmName: 'Morgan Stanley',
+    position: 'Analyst',
+    lastReachOut: '2024-06-22', // Hardcoded date for testing
+    email: 'jordan.marx@morganstanley.com', // Hardcoded email for testing
+    phoneNumber: '123-456-7890', // Hardcoded phone number for testing
+    notes: 'Met at the annual finance conference.' // Hardcoded notes for testing
   });
 
   // Input change handler
@@ -22,12 +26,23 @@ const AddContactForm = () => {
   };
 
   // Form submit handler (no functionality yet)
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+    try {
+      const docRef = await addDoc(collection(db, "contacts"), {
+        fullName: contact.fullName,
+        firmName: contact.firmName,
+        position: contact.position,
+        lastReachOut: contact.lastReachOut,
+        email: contact.email,
+        phoneNumber: contact.phoneNumber,
+        notes: contact.notes,
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
     
-    // For now, just log the form data
-    console.log('Form Submitted: ', contact);
-
     // Reset form fields after submission
     setContact({
       fullName: '',
@@ -125,8 +140,10 @@ const AddContactForm = () => {
             placeholder="Interaction notes"
           />
         </div>
-
-        <button type="submit">Add Contact</button>
+        <button className="button-primary" type="submit">Add Contact</button>
+        <Link to='/'>
+            <button className="button-cancel" type="button">Cancel</button>
+        </Link>
       </form>
     </div>
   );
