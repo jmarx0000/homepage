@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './ContactTile.css';
+import './Styles/ContactTile.css';
 
 const ContactTile = ({ name, firmName, position, lastReachOut, phoneNumber, notes }) => {
     return (
