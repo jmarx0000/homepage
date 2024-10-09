@@ -1,0 +1,8 @@
+:root {
+    --primary-color: #003366; /* Your primary color */
+    --secondary-color: #63c6ff; /* A secondary color */
+    --accent-color: #e7a1fc; /* Accent color */
+    --background-color: #FFFFFF; /* Background color */
+    --primary-text-color: #2C3E50; /* Primary text color */
+    --primary-button-hover: #9cd7ff; /* A secondary color for hover effects or accents */
+  }

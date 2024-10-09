@@ -1,0 +1,36 @@
+/* Toolbar.css */
+@import url('../../AppTheme.css');
+
+.toolbar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.toolbar-title {
+    color: white;
+}
+
+.toolbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.toolbar .nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.toolbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.toolbar .nav-links a:hover {
+    text-decoration: underline;
+}

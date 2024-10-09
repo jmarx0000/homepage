@@ -7,8 +7,10 @@ import AddContactPage from './Pages/AddContactPage'; // The new contact page
 import ContactsList from './Pages/ContactsListPage'; // The new ContactsListPage
 import { AuthProvider } from "./Functions/AuthContext";
 import HomePage from './Pages/HomePage';
+import { useNavigate } from 'react-router-dom';
 
 const App = () => {
+
   return (
       <AuthProvider>
         <Routes>
