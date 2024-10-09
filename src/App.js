@@ -5,14 +5,17 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-rou
 import HomePage from './Pages/HomePage'; // Assuming HomePage is in /pages
 import AddContactPage from './Pages/AddContactPage'; // The new contact page
 import ContactsList from './Pages/ContactsListPage'; // The new ContactsListPage
+import { AuthProvider } from "./Functions/AuthContext";
 
 const App = () => {
   return (
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/add-contact" element={<AddContactPage />} /> {/* New Route */}
-        <Route path="/all-contacts" element={<ContactsList />} /> {/* New Route for ContactsListPage */}
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/add-contact" element={<AddContactPage />} /> {/* New Route */}
+          <Route path="/all-contacts" element={<ContactsList />} /> {/* New Route for ContactsListPage */}
+        </Routes>
+      </AuthProvider>
   );
 };
 
