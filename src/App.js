@@ -2,20 +2,22 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
-import HomePage from './Pages/HomePage'; // Assuming HomePage is in /pages
+import Dashboard from './Pages/Dashboard';
 import AddContactPage from './Pages/AddContactPage'; // The new contact page
 import ContactsList from './Pages/ContactsListPage'; // The new ContactsListPage
 import { AuthProvider } from "./Functions/AuthContext";
+import HomePage from './Pages/HomePage';
 
 const App = () => {
   return (
       <AuthProvider>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/add-contact" element={<AddContactPage />} /> {/* New Route */}
           <Route path="/all-contacts" element={<ContactsList />} /> {/* New Route for ContactsListPage */}
         </Routes>
-      </AuthProvider>
+      </AuthProvider>      
   );
 };
 

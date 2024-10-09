@@ -5,27 +5,32 @@ import { useAuth } from '../Functions/AuthContext.js'; // Ensure you have this f
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const HomePage = () => {
-  const { signInWithGoogle, user } = useAuth(); // Use the signInWithGoogle function and user from the AuthContext
+const Dashboard = () => {
+  
+  const { signInWithGoogle, logOut, user } = useAuth(); // Use the signInWithGoogle function from the AuthContext
   const navigate = useNavigate(); // Use useNavigate hook from react-router-dom
 
   useEffect(() => {
-    if (user) {
-      navigate('/dashboard'); // Navigate to the dashboard if the user is signed in
-    }
-    else {
-      navigate('/'); // Navigate to the homepage if the user is not signed in
-    }
-  }, [user, navigate]);
+        if(user===null){
+          navigate('/');
+        }
+    } , [user, navigate]);
+
 
   return (
     <div className="centered"> {/* Use a class name from your App.css */}
       <h1 className="header">Nexus</h1> {/* Apply a CSS class for header */}
-      
+      <Link to="/add-contact">
+        <button className="button-primary" style={{ width: '200px', margin: '20px' }}>Add New Contact</button> 
+      </Link>
+      <Link to="/all-contacts">
+        <button className="button-primary" style={{ width: '200px', margin: '20px' }}>All Contacts</button> 
+      </Link>
+
       {/* google sign in button */}
-      <button onClick={signInWithGoogle}>Sign in with Google</button>
+      <button onClick={logOut}>Log Out</button>
     </div>
   );
 };
 
-export default HomePage;
+export default Dashboard;
