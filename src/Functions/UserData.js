@@ -12,24 +12,26 @@ export const UserDataProvider = ({ children }) => {
 
     const { user } = useAuth();
 
+    // Function to fetch contacts from the Firebase database
+    const fetchContacts = async () => {
+        try {
+            if (user) {
+                const querySnapshot = await getDocs(collection(db, `users/${user.uid}/contacts`));
+                // Map the contacts to an array of objects
+                const contactsData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                setContacts(contactsData);
+            } else {
+                console.log("No user found");
+            }
+        } catch (error) {
+            console.error("Error fetching contacts: ", error);
+        }
+    };
+
     // Fetch contacts from the Firebase database
     useEffect(() => {
-        const fetchContacts = async () => {
-            try {
-                if (user) {
-                    const querySnapshot = await getDocs(collection(db, `users/${user.uid}/contacts`));
-                    // Map the contacts to an array of objects
-                    const contactsData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-                    setContacts(contactsData);
-                } else {
-                    console.log("No user found");
-                }
-            } catch (error) {
-                console.error("Error fetching contacts: ", error);
-            }
-        };
         fetchContacts();
-    }, [user, contacts]);
+    }, [user]);
 
     // Loop through all contacts and print the first name
     useEffect(() => {
@@ -39,7 +41,7 @@ export const UserDataProvider = ({ children }) => {
     }, [contacts]);
 
     return (
-        <UserDataContext.Provider value={{ contacts }}>
+        <UserDataContext.Provider value={{ contacts, setContacts, fetchContacts }}>
             {children}
         </UserDataContext.Provider>
     );

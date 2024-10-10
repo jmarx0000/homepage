@@ -8,7 +8,7 @@ import { useUserData } from '../Functions/UserData';
 
 const AddContactForm = ({cancelRoute}) => {
   // Form state
-  const { contacts, setContacts } = useUserData();
+  const { contacts, setContacts, fetchContacts } = useUserData();
 
 
   const [contact, setContact] = useState({
@@ -47,6 +47,7 @@ const AddContactForm = ({cancelRoute}) => {
         notes: contact.notes,
       });
       setContacts([...contacts, { id: docRef.id, ...contact }]);
+      fetchContacts();
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
