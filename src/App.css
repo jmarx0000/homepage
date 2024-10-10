@@ -2,7 +2,8 @@
 :root {
   --primary-color: #003366; /* Your primary color */
   --secondary-color: #63c6ff; /* A secondary color */
-  --accent-color: #e7a1fc; /* Accent color */
+  --background-color-blue: #96d3f7; /* Accent color */
+  --accent-color-grey: #e7a1fc;
   --background-color: #FFFFFF; /* Background color */
   --primary-text-color: #2C3E50; /* Primary text color */
   --primary-button-hover: #9cd7ff; /* A secondary color for hover effects or accents */
@@ -34,8 +35,10 @@
 }
 
 /* Centered container */
-.centered {
+.page-container {
   text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /* App logo styling */

@@ -14,11 +14,9 @@ const Toolbar = () => {
                 <div className='toolbar-links'>
                     
                     {/* google sign in button; button only shows if no user is signed in */}
-                    {!user && <button onClick={signInWithGoogle}>Sign in with Google</button>}
+                    {!user && <button className='sign-in' onClick={signInWithGoogle} style={{margin: '20px'}}>Sign in with Google</button>}
                     
-                    {user !== null && <button onClick={logOut}>Log Out</button>}
-                    <button onClick={() => window.location.href='/dashboard'}>Does Nothing</button>
-                    <button onClick={() => window.location.href='/add-contact'}>Does Nothing</button>
+                    {user !== null && <button className='sign-out' onClick={logOut} style={{margin: '20px'}}>Log Out</button>}
                 </div>
             </div>
         </div>

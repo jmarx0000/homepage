@@ -1,13 +1,12 @@
 // src/App.js
 
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
-import Dashboard from './Pages/Dashboard';
+import { Route, Routes } from 'react-router-dom';
+import { AuthProvider } from "./Functions/AuthContext";
 import AddContactPage from './Pages/AddContactPage'; // The new contact page
 import ContactsList from './Pages/ContactsListPage'; // The new ContactsListPage
-import { AuthProvider } from "./Functions/AuthContext";
+import Dashboard from './Pages/Dashboard';
 import HomePage from './Pages/HomePage';
-import { useNavigate } from 'react-router-dom';
 
 const App = () => {
 

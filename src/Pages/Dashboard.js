@@ -20,21 +20,19 @@ const Dashboard = () => {
 
   return (
     <div>
-        <Toolbar/>
-    <div className="centered"> {/* Use a class name from your App.css */}
-      <h1 className="header">Nexus</h1> {/* Apply a CSS class for header */}
-      <Link to="/add-contact">
-        <button className="button-primary" style={{ width: '200px', margin: '20px' }}>Add New Contact</button> 
-      </Link>
-      <Link to="/all-contacts">
-        <button className="button-primary" style={{ width: '200px', margin: '20px' }}>All Contacts</button> 
-      </Link>
-
-      {/* google sign in button */}
-      <button onClick={logOut}>Log Out</button>
-
-      <button onClick={() => user ? console.log(user.uid) : console.log('User is not logged in')}>View user</button>
-    </div>
+      <Toolbar/>
+      <div className="page-container"> {/* Use a class name from your App.css */}
+        <h1 className="header">Nexus</h1> {/* Apply a CSS class for header */}
+        <Link to="/add-contact">
+          <button className="button-primary" style={{ width: '200px', margin: '20px' }}>Add New Contact</button> 
+        </Link>
+        <Link to="/all-contacts">
+          <button className="button-primary" style={{ width: '200px', margin: '20px' }}>All Contacts</button> 
+        </Link>
+        <div style={{ width: '100%', textAlign: 'center', marginTop: '20px' }}>
+          <button onClick={() => user ? console.log(user.uid) : console.log('User is not logged in')}>View user</button>
+        </div>
+      </div>
     </div>
   );
 };
