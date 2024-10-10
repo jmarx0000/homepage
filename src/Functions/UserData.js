@@ -29,7 +29,7 @@ export const UserDataProvider = ({ children }) => {
             }
         };
         fetchContacts();
-    }, [user]);
+    }, [user, contacts]);
 
     // Loop through all contacts and print the first name
     useEffect(() => {

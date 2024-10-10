@@ -3,10 +3,14 @@ import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { db } from '../Configuration/firebase'; 
 import { collection, addDoc } from 'firebase/firestore';
 import { useAuth } from '../Functions/AuthContext';
+import { useUserData } from '../Functions/UserData';
 
 
 const AddContactForm = ({cancelRoute}) => {
   // Form state
+  const { contacts, setContacts } = useUserData();
+
+
   const [contact, setContact] = useState({
     fullName: 'Jordan Marx',
     firmName: 'Morgan Stanley',
@@ -42,6 +46,7 @@ const AddContactForm = ({cancelRoute}) => {
         phoneNumber: contact.phoneNumber,
         notes: contact.notes,
       });
+      setContacts([...contacts, { id: docRef.id, ...contact }]);
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
