@@ -18,3 +18,13 @@
     align-items: center;
     padding: 20px;
 }
+
+.pricing {
+    height: 700px;
+    background-color: var(--background-color-grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}

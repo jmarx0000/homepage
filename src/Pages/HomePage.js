@@ -23,34 +23,35 @@ const HomePage = () => {
   return (
     <div>
       <Toolbar/>
-    <div className="page-container"> {/* Use a class name from your App.css */}
-      
-      <div className="section-1">
-        <h1 className="header" style={{fontSize: '64px'}}>Nexus</h1> {/* Apply a CSS class for header */}
+      <div className="page-container"> {/* Use a class name from your App.css */}
+        
+        <div className="section-1">
+          <h1 className="header" style={{fontSize: '64px'}}>Nexus</h1> {/* Apply a CSS class for header */}
           <h2>Catchy slogan or pithy phrase here.</h2>
-      </div>
+        </div>
 
-      <div className="section-2"> 
-        <h2>What is Nexus?</h2>
-        <p>Some information about Nexus here.</p>
-      </div>
+        <div className="section-2"> 
+          <h2>What is Nexus?</h2>
+          <p>Some information about Nexus here.</p>
+        </div>
 
-      <div className="section-3"> 
-        <h2>What is Nexus?</h2>
-        <p>Some information about Nexus here.</p>
-      </div>
+        <div className="section-3"> 
+          <h2>What is Nexus?</h2>
+          <p>Some information about Nexus here.</p>
+        </div>
 
-      <div className="creds"> 
-        <h2>What is Nexus?</h2>
-        <p>Some information about Nexus here.</p>
-      </div>
+        {/* credentials section */}
+        <div className="creds"> 
+          <h2>Helping Our Users Network Their Way to Success</h2>
+          <p>Add logos of people who have placed well</p>
+        </div>
 
-      <div className="pricing"> 
-        <h2>What is Nexus?</h2>
-        <p>Some information about Nexus here.</p>
-      </div>
+        <div className="pricing"> 
+          <h2>Pricing</h2>
+          <p s>Some information about Nexus here.</p>
+        </div>
 
-    </div>
+      </div>
     </div>
   );
 };

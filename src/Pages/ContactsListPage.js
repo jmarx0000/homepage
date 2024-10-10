@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import '../App.css'; // Import global styles
 import './Styles/ContactsListPage.css'; // Import the CSS file
 import PageHeader1 from '../Components/PageHeader1';
+import { useUserData } from '../Functions/UserData';
 
 var cellWidth = 500;
 const numCells = 6;
@@ -14,23 +15,8 @@ var totalWidth = cellWidth * numCells;
 
 
 const ContactsList = () => {
-  const [contacts, setContacts] = useState([]);
 
-  // grab all contacts from firebase database
-  useEffect(() => {
-    const fetchContacts = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, 'contacts'));
-        
-        // Map the contacts to an array of objects
-        const contactsData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-        setContacts(contactsData);
-      } catch (error) {
-        console.error("Error fetching contacts: ", error);
-      }
-    };
-    fetchContacts();
-  }, []);
+  const { contacts, setContacts } = useUserData();
 
 
   // State to control the visibility of the delete confirmation popup
@@ -85,7 +71,7 @@ const ContactsList = () => {
 
           {/* header row */}
           <div className="contacts-list-header">
-            <div style={{ width: '50px' }}> </div>{/* Add a new column for the icon */}
+            <div style={{ fontWeight: 'bold', width: '75px' }}>Actions</div>{/* Add a new column for the icon */}
             <div style={{ fontWeight: 'bold', width: '200px' }}>Name</div>
             <div style={{ fontWeight: 'bold', width: '200px' }}>Firm Name</div>
             <div style={{ fontWeight: 'bold', width: '200px' }}>Position</div>
@@ -99,7 +85,7 @@ const ContactsList = () => {
             <div key={contact.id} className="contacts-list-content" style={{ width: `${totalWidth}px` }}>
               
               {/* hidden dropdown menu to delete information */}
-              <div style={{ width: '50px' }}> {/* Add a new column for the icon */}
+              <div style={{ width: '75px' }}> {/* Add a new column for the icon */}
                 <div className="dropdown">
                   <span className="icon">...</span> {/* Icon */}
                   <div className="dropdown-content">
