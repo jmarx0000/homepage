@@ -58,6 +58,8 @@ const ContactsList = () => {
   return (
     <div>
       <PageHeader1 />
+      
+      <div className='contacts-page-container'>
       <div style={{ width: '200px', margin: '20px' }}>
         <Link to="/">
           <button className="button-primary">Back to Home</button>
@@ -77,12 +79,12 @@ const ContactsList = () => {
             <div style={{ fontWeight: 'bold', width: '200px' }}>Position</div>
             <div style={{ fontWeight: 'bold', width: '200px' }}>Last Reach Out</div>
             <div style={{ fontWeight: 'bold', width: '200px' }}>Phone Number</div>
-            <div style={{ fontWeight: 'bold', width: '200px' }}>Notes</div>
+            <div style={{ fontWeight: 'bold', width: '400px' }}>Notes</div>
           </div>
 
           {/* content rows */}
           {contacts.map(contact => (
-            <div key={contact.id} className="contacts-list-content" style={{ width: `${totalWidth}px` }}>
+            <div key={contact.id} className="contacts-list-content" style={{ width: `${totalWidth}px`,  borderBottom: '1px solid #ccc' }}>
               
               {/* hidden dropdown menu to delete information */}
               <div style={{ width: '75px' }}> {/* Add a new column for the icon */}
@@ -100,10 +102,11 @@ const ContactsList = () => {
               <div style={{ width: '200px' }}>{contact.position}</div>
               <div style={{ width: '200px' }}>{contact.lastReachOut}</div>
               <div style={{ width: '200px' }}>{contact.phoneNumber}</div>
-              <div style={{ width: '200px' }}>{contact.notes}</div>
+              <div style={{ width: '400px' }}>{contact.notes}</div>
             </div>
           ))}
         </div>
+        </div> {/* end of page-container */}
       </div>
 
 

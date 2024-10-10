@@ -1,7 +1,12 @@
+.contacts-page-container{
+  width: 80vw;
+  margin: 20px auto; /* Add some margin for spacing and center the container */
+}
+
 .contacts-list-container {
-    width: 80vw;
+    height: 80vh;
     overflow-x: scroll;
-    margin: 20px auto; /* Add some margin for spacing and center the container */
+    
 }
 .contacts-list-header {
     width: 80%;

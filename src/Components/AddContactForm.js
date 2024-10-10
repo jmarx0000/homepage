@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { db } from '../Configuration/firebase'; 
 import { collection, addDoc } from 'firebase/firestore';
+import { useAuth } from '../Functions/AuthContext';
 
 
 const AddContactForm = ({cancelRoute}) => {
@@ -16,6 +17,9 @@ const AddContactForm = ({cancelRoute}) => {
     notes: 'Met at the annual finance conference.' // Hardcoded notes for testing
   });
 
+  // Use the useAuth hook to access the user object
+  const { user } = useAuth();
+
   // Input change handler
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -29,7 +33,7 @@ const AddContactForm = ({cancelRoute}) => {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
     try {
-      const docRef = await addDoc(collection(db, "contacts"), {
+      const docRef = await addDoc(collection(db, `users/${user.uid}/contacts`), {
         fullName: contact.fullName,
         firmName: contact.firmName,
         position: contact.position,
