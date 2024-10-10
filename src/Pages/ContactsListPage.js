@@ -72,7 +72,7 @@ const ContactsList = () => {
         <div className="contacts-list" style={{ width: `${totalWidth}px` }}>
 
           {/* header row */}
-          <div className="contacts-list-header">
+          <div className="contacts-list-header" style={{borderBottom: '1px solid #ccc'}}>
             <div style={{ fontWeight: 'bold', width: '75px' }}>Actions</div>{/* Add a new column for the icon */}
             <div style={{ fontWeight: 'bold', width: '200px' }}>Name</div>
             <div style={{ fontWeight: 'bold', width: '200px' }}>Firm Name</div>
