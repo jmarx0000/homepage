@@ -2,7 +2,7 @@
 
 
 .page-container {
-    width: 80%;
+    width: 70vw;
     margin: auto;
 }
 
@@ -23,6 +23,22 @@
     padding: 20px;
 }
 
+.section-3 {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.creds {
+   margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
 .pricing {
     height: 800px;
     display: flex;
@@ -30,6 +46,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
+    margin-top: 50px;
 }
 
 .price-row {
@@ -111,3 +128,8 @@ img {
     border: 1px solid var(--accent-color-grey); /* Add a border */
 }
 
+.product-demo {
+    height: 35vw;
+    width: 70vw;
+    border: 1px solid var(--accent-color-grey);
+}

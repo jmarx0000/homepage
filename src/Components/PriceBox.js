@@ -4,7 +4,7 @@ import './Styles/PriceBox.css';
 const PriceBox = ({ style }) => {
     return (
         <div className="price-box" style={{ ...style }}>
-            <span className="price">Hello</span>
+            <span className="price">Free</span>
         </div>
     );
 };

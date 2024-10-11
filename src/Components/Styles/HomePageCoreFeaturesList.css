@@ -1,0 +1,26 @@
+@import url('../../App.css');
+
+:root {
+    --dimension-reference: 4vw;
+}
+
+.features-container {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature {
+    font-size: 20px;
+    height: calc(4vw + 1px);
+    width: 16vw;
+    border-bottom: 1px solid var(--accent-color-grey);
+    box-sizing: border-box;
+}
+.feature1 {
+    font-size: 20px;
+    height: 5vw;
+    width: 16vw;
+    border-bottom: 1px solid var(--accent-color-grey);
+    box-sizing: content-box;
+    border-bottom: 1px solid var(--accent-color-grey);
+    border-top: 1px solid var(--accent-color-grey);
+}

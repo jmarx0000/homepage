@@ -7,6 +7,7 @@ import Toolbar from '../Components/Toolbar';
 import { useAuth } from '../Functions/AuthContext.js'; // Ensure you have this function in your services
 import './Styles/HomePage.css'; // Ensure HomePage.css is correctly imported for styling
 import PriceBox from '../Components/PriceBox';
+import HomePageCoreFeaturesList from '../Components/HomePageCoreFeaturesList';
 
 // Import all images from the public folder
 const importAll = (r) => r.keys().map(r);
@@ -17,7 +18,7 @@ userLogos.forEach((logo, index) => {
 });
 
 const HomePage = () => {
-  const { signInWithGoogle, user } = useAuth(); // Use the signInWithGoogle function and user from the AuthContext
+  const { user } = useAuth(); // Use the signInWithGoogle function and user from the AuthContext
   const navigate = useNavigate(); // Use useNavigate hook from react-router-dom
 
   useEffect(() => {
@@ -104,19 +105,31 @@ const HomePage = () => {
       
       <div className="section-1">
           <h1 className="header" style={{fontSize: '64px'}}>Nexus</h1> {/* Apply a CSS class for header */}
-          <h2>Catchy slogan or pithy phrase here.</h2>
+          <h2>Keeping track of connections is hard</h2>
         </div>
 
       <div className="page-container"> {/* Use a class name from your App.css */}
 
         <div className="section-2"> 
-          <h2>Why Nexus</h2>
-          <p>Some information about Nexus here.</p>
+          <h2>We make it a little easier</h2>
+          <p className="why-nexus">Whether for finance, consulting, or just to keep in touch with important friends - 
+            Nexus is purpose-built to easily keep track of all your important relationships.</p>
         </div>
 
         <div className="section-3"> 
           <h2>A Platform Designed For Recruiting</h2>
-          <p>Some information about Nexus here.</p>
+            
+            {/* TBD product demo video */}
+            <div className="product-demo">
+              
+            </div>
+          <p>Product demo</p>
+          <div style={{display: "inline-flex", margin:'50px'}}>
+            <HomePageCoreFeaturesList />
+            <div style={{width: '800px', height: '400px', border: '1px solid #ccc', margin: '30px'}}>
+
+            </div>
+          </div>
         </div>
 
         {/* credentials section */}
@@ -174,7 +187,6 @@ const HomePage = () => {
 
         <div className="pricing"> 
           <h2>Pricing</h2>
-          <p>Some information about Nexus here.</p>
           <div className="price-row">
             <PriceBox style={{ marginRight: '40px' }}/>
             <PriceBox style={{ marginRight: '40px' }}/>

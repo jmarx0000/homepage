@@ -1,8 +1,8 @@
 @import url('../../App.css');
 
 .price-box {
-    width: 400px; /* Set the desired width */
-    height: 600px; /* Set the desired height */
+    width: 15vw; /* Set the desired width */
+    height: 30vw; /* Set the desired height */
     border: 1px solid var(--accent-color-grey); /* Optional: Set a border */
     display: flex;
     align-items: center;
