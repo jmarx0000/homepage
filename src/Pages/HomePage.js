@@ -104,21 +104,21 @@ const HomePage = () => {
     <div>
       <Toolbar/>
       
-      <div className="section-1">
-          <h1 className="header" style={{fontSize: '64px'}}>Nexus</h1> {/* Apply a CSS class for header */}
-          <h2>Keeping track of connections is hard</h2>
+      <div className="section-1" >
+          <h1 className="header" style={{fontSize: '96px'}}>Nexus</h1> {/* Apply a CSS class for header */}
+          <h2>Keeping Track of Connections is Hard</h2>
         </div>
 
       <div className="page-container"> {/* Use a class name from your App.css */}
 
         <div className="section-2"> 
-          <h2>We make it a little easier</h2>
+          <h2>We Make It a Little Easier</h2>
           <p className="why-nexus">Whether for finance, consulting, or just to keep in touch with important friends - 
             Nexus is purpose-built to easily keep track of all your important relationships.</p>
         </div>
 
         <div className="section-3"> 
-          <h2>A Platform Designed For Recruiting</h2>
+          <h2>Nexus - The Platform Designed For Recruiting</h2>
             
             {/* TBD product demo video */}
             <div className="product-demo">

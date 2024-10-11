@@ -3,9 +3,9 @@
   margin: auto;
 }
 
-.contacts-list-container {
-    height: 80vh;
-    overflow-x: scroll;
+.contacts-list-container {  
+  height: 70vh;
+  overflow-x: scroll;
     
 }
 .contacts-list-header {
@@ -116,4 +116,34 @@
     color: white;
   }
 
+  .contacts-toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .search-bar-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .search-bar {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  .toolbar-left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+ 
   

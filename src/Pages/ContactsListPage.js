@@ -64,13 +64,35 @@ const ContactsList = () => {
         <SideNavigation />
 
         {/* Site Header */}
-        <h1 className="header">All Contacts</h1>  
+        <h1 className="header" style={{ marginTop: '100px'}}>All Contacts</h1>  
 
-      <div style={{ width: '200px', margin: '20px' }}>
-        {/* Button back to dashboard */}
-        <Link to="/dashboard">
-          <button className="button-primary">Back to Dashboard</button>
-        </Link>
+      <div className='contacts-toolbar' style={{ margin: '20px' }}>
+
+        <div className='toolbar-left'>
+        {/* Search Bar */}
+        <div className="search-bar-container">
+          <input
+            type="text"
+            className="search-bar"
+            placeholder="Search contacts..."
+          />
+        </div>
+
+        {/* Button to search */}
+        <button className="button-primary" style={{ width: '100px' }}>Search</button> 
+        </div>
+
+
+
+
+
+        {/* right aligned toolbar */}
+        <div className='toolbar-right'>
+          {/* Button to add contact */}
+          <Link to="/add-contact">
+            <button className="button-primary" style={{ width: '200px' }}>Add New Contact</button> 
+          </Link>
+        </div>
       
       </div>
 
@@ -81,7 +103,7 @@ const ContactsList = () => {
 
           {/* header row */}
           <div className="contacts-list-header" style={{borderBottom: '1px solid #ccc'}}>
-            <div style={{ fontWeight: 'bold', width: '75px' }}>Actions</div>{/* Add a new column for the icon */}
+            <div style={{ fontWeight: 'bold', width: '75px' }}>Edit</div>{/* Add a new column for the icon */}
             <div style={{ fontWeight: 'bold', width: '200px' }}>Name</div>
             <div style={{ fontWeight: 'bold', width: '200px' }}>Firm Name</div>
             <div style={{ fontWeight: 'bold', width: '200px' }}>Position</div>
@@ -100,9 +122,8 @@ const ContactsList = () => {
                 <div className="dropdown">
                   <span className="icon">...</span> {/* Icon */}
                   <div className="dropdown-content">
+                    <a href="#">Edit</a>
                     <a href="#" className='delete-contact' onClick={() => confirmDelete(contact.id)}>Delete</a>
-                    <a href="#">Action 2</a>
-                    <a href="#">Action 3</a>
                   </div>
                 </div>
               </div>

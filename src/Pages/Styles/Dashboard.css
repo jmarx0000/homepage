@@ -1,0 +1,40 @@
+@import url('../../AppTheme.css');
+
+.page-container {
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.key-insights-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 80vw;
+}
+
+.key-insight {
+    width: 15vw;
+    height: 10vw;
+    border: 2px solid var(--accent-color-grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.key-insight-value {
+    font-size: 72px;
+    color: var(--primary-color);
+    margin: 0;
+    font-weight: bold;
+}
+
+.header-dashboard {
+    font-size: 72px;
+    color: var(--primary-color);
+    margin: 0;
+}
