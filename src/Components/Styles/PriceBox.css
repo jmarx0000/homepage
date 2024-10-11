@@ -1,0 +1,15 @@
+@import url('../../App.css');
+
+.price-box {
+    width: 400px; /* Set the desired width */
+    height: 600px; /* Set the desired height */
+    border: 1px solid var(--accent-color-grey); /* Optional: Set a border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a background shadow */
+}
+
+.price {
+    font-size: 20px; /* Optional: Set font size */
+}

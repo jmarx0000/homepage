@@ -1,6 +1,11 @@
 @import url('../../App.css');
 
 
+.page-container {
+    width: 80%;
+    margin: auto;
+}
+
 .section-1 {
     display: flex;
     flex-direction: column;
@@ -11,7 +16,6 @@
 
 .section-2 {
     height: 40vh;
-    background-color: var(--background-color-blue);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,11 +24,90 @@
 }
 
 .pricing {
-    height: 700px;
-    background-color: var(--background-color-grey);
+    height: 800px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
+
+.price-row {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+
+.scroll-container {
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    white-space: nowrap; /* Prevent line breaks */
+    padding: 10px 0; /* Optional: Add some padding */
+}
+
+.scroll-content {
+    display: inline-flex; /* Use inline-flex to keep items in a row */
+    animation: scroll 20s linear infinite; /* Apply the scrolling animation */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Keyframes for horizontal scrolling animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Adjust this value based on the width of your content */
+    }
+}
+
+/* To ensure that images are not highlightable for a better UX */
+.scroll-content * {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+    user-select: none;         /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+/* second scroll content */
+.scroll-content2 {
+    display: inline-flex; /* Use inline-flex to keep items in a row */
+    animation: scroll2 20s linear infinite; /* Apply the scrolling animation */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Keyframes for the new horizontal scrolling animation */
+@keyframes scroll2 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%); /* Adjust this value based on the width of your new content */
+    }
+}
+
+/* To ensure that images are not highlightable for a better UX */
+.scroll-content2 * {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+    user-select: none;         /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensures the image preserves its aspect ratio */
+    width: 100%; /* Ensures the image takes the full width of the div */
+    height: 100%; /* Ensures the image takes the full height of the div */
+    width: 200px; /* Set the desired width */
+    height: 200px; /* Set the desired height */
+    margin: 20px; /* Add some margin */ 
+    padding: 2px; /* Add some padding */
+    border: 1px solid var(--accent-color-grey); /* Add a border */
+}
+

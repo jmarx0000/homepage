@@ -17,6 +17,7 @@ h1{
 
 .toolbar-title {
     color: white;
+    margin: auto 0;
 }
 
 .toolbar .logo {
