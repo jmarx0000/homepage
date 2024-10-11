@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/homepage/static/css/main.4227f21a.css",
-    "main.js": "/homepage/static/js/main.e17e124e.js",
+    "main.css": "/homepage/static/css/main.ea57221e.css",
+    "main.js": "/homepage/static/js/main.5ed0b8c9.js",
     "static/js/453.0250febe.chunk.js": "/homepage/static/js/453.0250febe.chunk.js",
     "static/media/moelis.png": "/homepage/static/media/moelis.2bed23d70526e1372380.png",
     "static/media/morgan-stanley.jpg": "/homepage/static/media/morgan-stanley.8babd64e6e06a039ab21.jpg",
     "static/media/jp-morgan.png": "/homepage/static/media/jp-morgan.764dc29e605054a18e4b.png",
     "static/media/tidal-partners.png": "/homepage/static/media/tidal-partners.57def09b2abd64aa6548.png",
     "index.html": "/homepage/index.html",
-    "main.4227f21a.css.map": "/homepage/static/css/main.4227f21a.css.map",
-    "main.e17e124e.js.map": "/homepage/static/js/main.e17e124e.js.map",
+    "main.ea57221e.css.map": "/homepage/static/css/main.ea57221e.css.map",
+    "main.5ed0b8c9.js.map": "/homepage/static/js/main.5ed0b8c9.js.map",
     "453.0250febe.chunk.js.map": "/homepage/static/js/453.0250febe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4227f21a.css",
-    "static/js/main.e17e124e.js"
+    "static/css/main.ea57221e.css",
+    "static/js/main.5ed0b8c9.js"
   ]
 }
