@@ -8,7 +8,7 @@ const Toolbar = () => {
     const { logOut, signInWithGoogle, user } = useAuth(); // Use the signInWithGoogle function from the AuthContext
 
     return (
-        <div className='toolbar-container' style={{height: '200px'}}>
+        <div className='toolbar-container'>
             <div className='toolbar'>
                 <h1 className='toolbar-title'>Nexus</h1>
                 <div className='toolbar-links'>

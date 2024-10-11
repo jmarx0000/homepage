@@ -8,6 +8,7 @@ import { useAuth } from '../Functions/AuthContext.js'; // Ensure you have this f
 import './Styles/HomePage.css'; // Ensure HomePage.css is correctly imported for styling
 import PriceBox from '../Components/PriceBox';
 import HomePageCoreFeaturesList from '../Components/HomePageCoreFeaturesList';
+import Footer from '../Components/Footer';
 
 // Import all images from the public folder
 const importAll = (r) => r.keys().map(r);
@@ -185,7 +186,7 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="pricing"> 
+        <div className="pricing" style={{ marginBottom: '100px'}}> 
           <h2>Pricing</h2>
           <div className="price-row">
             <PriceBox style={{ marginRight: '40px' }}/>
@@ -195,7 +196,11 @@ const HomePage = () => {
         </div>
 
       </div>
+      
+      {/* footer */}
+      <Footer />
     </div>
+    
   );
 };
 

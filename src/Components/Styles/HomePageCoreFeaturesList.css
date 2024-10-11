@@ -1,4 +1,4 @@
-@import url('../../App.css');
+@import url('../../AppTheme.css');
 
 :root {
     --dimension-reference: 4vw;
@@ -10,10 +10,14 @@
 
 .feature {
     font-size: 20px;
-    height: calc(4vw + 1px);
+    height: 5vw;
     width: 16vw;
     border-bottom: 1px solid var(--accent-color-grey);
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .feature1 {
     font-size: 20px;
@@ -23,4 +27,15 @@
     box-sizing: content-box;
     border-bottom: 1px solid var(--accent-color-grey);
     border-top: 1px solid var(--accent-color-grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin: 0;
+    padding: 0;
 }

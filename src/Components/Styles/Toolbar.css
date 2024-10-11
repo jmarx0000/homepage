@@ -4,20 +4,21 @@
 .toolbar {
     background-color: var(--primary-color);
     color: white;
-    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    height: 80px;
 }
 
 h1{
     margin-left: 20px;
+    font-size: 24px;
 }
 
 .toolbar-title {
     color: white;
-    margin: auto 0;
+    margin: 10px 10px 10px 10px;
+    font-size: 50px;
 }
 
 .toolbar .logo {
