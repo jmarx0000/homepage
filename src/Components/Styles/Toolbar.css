@@ -8,6 +8,8 @@
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    width: 100vw;
+    position: absolute;
 }
 
 h1{

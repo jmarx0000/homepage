@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'; // Combine imports from re
 import '../App.css'; // Ensure App.css is correctly imported for styling
 import { useAuth } from '../Functions/AuthContext.js'; // Ensure you have this function in your services
 import Toolbar from '../Components/Toolbar';
+import SideNavigation from '../Components/SideNavigation.js'; // Ensure you have this component in your Components folder
 
 const Dashboard = () => {
   
@@ -18,8 +19,9 @@ const Dashboard = () => {
   return (
     <div>
       <Toolbar />
+      <SideNavigation />
       <div className="page-container"> {/* Use a class name from your App.css */}
-        <h1 className="header">Nexus</h1> {/* Apply a CSS class for header */}
+        <h1 className="header">Dashboard</h1> {/* Apply a CSS class for header */}
         <Link to="/add-contact">
           <button className="button-primary" style={{ width: '200px', margin: '20px' }}>Add New Contact</button> 
         </Link>

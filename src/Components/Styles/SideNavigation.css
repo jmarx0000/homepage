@@ -1,0 +1,50 @@
+@import url('../../AppTheme.css');
+
+.side-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75px;
+    height: 100vh;
+    background-color: var(--primary-color);
+    margin-top: 80px;
+    border-top: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--primary-color);
+}
+
+.side-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 75px;
+    width: 75px;
+    cursor: pointer;
+    border-bottom: 1px solid white;
+}
+
+.side-element:hover {
+    background-color: var(--accent-color-grey);
+}
+
+.side-element:hover .side-element-text {
+    color: black;
+}
+
+.side-element.active {
+    background-color: white;
+}
+
+.side-element.active .side-element-text {
+    color: var(--primary-color);
+}
+
+.side-element-text {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 5px;
+    font-weight: bold;
+}

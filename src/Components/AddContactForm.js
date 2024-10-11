@@ -45,6 +45,7 @@ const AddContactForm = ({cancelRoute}) => {
         email: contact.email,
         phoneNumber: contact.phoneNumber,
         notes: contact.notes,
+        dateCreated: Date.now() // Add current date in ISO format
       });
       setContacts([...contacts, { id: docRef.id, ...contact }]);
       fetchContacts();

@@ -5,8 +5,9 @@ import { collection, getDocs, doc, deleteDoc } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import '../App.css'; // Import global styles
 import './Styles/ContactsListPage.css'; // Import the CSS file
-import PageHeader1 from '../Components/PageHeader1';
 import { useUserData } from '../Functions/UserData';
+import SideNavigation from '../Components/SideNavigation';
+import Toolbar from '../Components/Toolbar';
 
 var cellWidth = 500;
 const numCells = 6;
@@ -57,19 +58,26 @@ const ContactsList = () => {
 
   return (
     <div>
-      <PageHeader1 />
+      <Toolbar /> {/* Add the Toolbar component */}
       
       <div className='contacts-page-container'>
+        <SideNavigation />
+
+        {/* Site Header */}
+        <h1 className="header">All Contacts</h1>  
+
       <div style={{ width: '200px', margin: '20px' }}>
-        <Link to="/">
-          <button className="button-primary">Back to Home</button>
+        {/* Button back to dashboard */}
+        <Link to="/dashboard">
+          <button className="button-primary">Back to Dashboard</button>
         </Link>
+      
       </div>
 
       <div className="contacts-list-container">
         
         {/* overarching container for all contacts list table */}
-        <div className="contacts-list" style={{ width: `${totalWidth}px` }}>
+        <div className="contacts-list" style={{ width: '3000px' }}>
 
           {/* header row */}
           <div className="contacts-list-header" style={{borderBottom: '1px solid #ccc'}}>
@@ -77,6 +85,7 @@ const ContactsList = () => {
             <div style={{ fontWeight: 'bold', width: '200px' }}>Name</div>
             <div style={{ fontWeight: 'bold', width: '200px' }}>Firm Name</div>
             <div style={{ fontWeight: 'bold', width: '200px' }}>Position</div>
+            <div style={{ fontWeight: 'bold', width: '300px' }}>Email</div>
             <div style={{ fontWeight: 'bold', width: '200px' }}>Last Reach Out</div>
             <div style={{ fontWeight: 'bold', width: '200px' }}>Phone Number</div>
             <div style={{ fontWeight: 'bold', width: '400px' }}>Notes</div>
@@ -100,6 +109,7 @@ const ContactsList = () => {
               <div style={{ width: '200px' }}>{contact.fullName}</div>
               <div style={{ width: '200px' }}>{contact.firmName}</div>
               <div style={{ width: '200px' }}>{contact.position}</div>
+              <div style={{ width: '300px' }}>{contact.email}</div>
               <div style={{ width: '200px' }}>{contact.lastReachOut}</div>
               <div style={{ width: '200px' }}>{contact.phoneNumber}</div>
               <div style={{ width: '400px' }}>{contact.notes}</div>
@@ -111,12 +121,14 @@ const ContactsList = () => {
 
 
         {/* popup element */}
-      {showPopup && (
-        <div className="popup">
-          <div className="popup-content">
-            <p>Are you sure you want to delete this contact?</p>
-            <button onClick={handleConfirmDelete}>Yes</button>
-            <button onClick={handleCancelDelete}>No</button>
+        {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup">
+            <div className="popup-content">
+              <p>Are you sure you want to delete this contact?</p>
+              <button onClick={handleConfirmDelete}>Yes</button>
+              <button onClick={handleCancelDelete}>No</button>
+            </div>
           </div>
         </div>
       )}
