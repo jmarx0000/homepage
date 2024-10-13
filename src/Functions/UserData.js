@@ -33,13 +33,6 @@ export const UserDataProvider = ({ children }) => {
         fetchContacts();
     }, [user]);
 
-    // Loop through all contacts and print the first name
-    useEffect(() => {
-        contacts.forEach(contact => {
-            console.log(contact.fullName);
-        });
-    }, [contacts]);
-
     return (
         <UserDataContext.Provider value={{ contacts, setContacts, fetchContacts }}>
             {children}

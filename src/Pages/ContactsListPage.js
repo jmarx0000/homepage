@@ -12,19 +12,19 @@ import Toolbar from '../Components/Toolbar';
 var cellWidth = 500;
 const numCells = 6;
 
-var totalWidth = cellWidth * numCells;
+var totalWidth = 3000;
 
 
 const ContactsList = () => {
 
   const { contacts, setContacts } = useUserData();
 
-
   // State to control the visibility of the delete confirmation popup
   const [showPopup, setShowPopup] = useState(false);
   
   // State to store the ID of the contact to be deleted
   const [contactToDelete, setContactToDelete] = useState(null);
+ 
   
   // Function to initiate the delete confirmation process
   // Sets the contact ID to be deleted and shows the confirmation popup
@@ -83,9 +83,6 @@ const ContactsList = () => {
         </div>
 
 
-
-
-
         {/* right aligned toolbar */}
         <div className='toolbar-right'>
           {/* Button to add contact */}
@@ -99,22 +96,31 @@ const ContactsList = () => {
       <div className="contacts-list-container">
         
         {/* overarching container for all contacts list table */}
-        <div className="contacts-list" style={{ width: '3000px' }}>
+        <div className="contacts-list" style={{ width: `${totalWidth}px` }}>
 
           {/* header row */}
-          <div className="contacts-list-header" style={{borderBottom: '1px solid #ccc'}}>
+          <div className="contacts-list-header" style={{width: `${totalWidth}px`, borderBottom: '1px solid #ccc'}}>
             <div style={{ fontWeight: 'bold', width: '75px' }}>Edit</div>{/* Add a new column for the icon */}
             <div style={{ fontWeight: 'bold', width: '200px' }}>Name</div>
             <div style={{ fontWeight: 'bold', width: '200px' }}>Firm Name</div>
+            <div style={{ fontWeight: 'bold', width: '200px' }}>Industry / Division</div>
             <div style={{ fontWeight: 'bold', width: '200px' }}>Position</div>
             <div style={{ fontWeight: 'bold', width: '300px' }}>Email</div>
-            <div style={{ fontWeight: 'bold', width: '200px' }}>Last Reach Out</div>
+            <div style={{ fontWeight: 'bold', width: '200px' }}>Last Contact</div>
+            <div style={{ fontWeight: 'bold', width: '200px' }}>Days Since Last Contact</div>
             <div style={{ fontWeight: 'bold', width: '200px' }}>Phone Number</div>
             <div style={{ fontWeight: 'bold', width: '400px' }}>Notes</div>
           </div>
 
           {/* content rows */}
-          {contacts.map(contact => (
+          {contacts.map(contact => {
+
+            // Calculate the number of days since the last reach out
+            const today = Date.now();
+            const lastReachOut = new Date(contact.lastReachOut).getTime();
+            const daysSinceLastReachOut = Math.floor((today - lastReachOut) / (1000 * 60 * 60 * 24));
+            
+            return(
             <div key={contact.id} className="contacts-list-content" style={{ width: `${totalWidth}px`,  borderBottom: '1px solid #ccc' }}>
               
               {/* hidden dropdown menu to delete information */}
@@ -129,13 +135,22 @@ const ContactsList = () => {
               </div>
               <div style={{ width: '200px' }}>{contact.fullName}</div>
               <div style={{ width: '200px' }}>{contact.firmName}</div>
+              <div style={{ width: '200px' }}>{contact.division}</div>
               <div style={{ width: '200px' }}>{contact.position}</div>
               <div style={{ width: '300px' }}>{contact.email}</div>
               <div style={{ width: '200px' }}>{contact.lastReachOut}</div>
+              <div style={{ width: '200px' }}>
+                <div className={daysSinceLastReachOut > 30 ? 'red' :
+                              daysSinceLastReachOut > 14 ? 'yellow' : 'green'} style={{width: '50px', height: '30px'}}>
+                    {/* text */}
+                    {daysSinceLastReachOut}
+                </div>
+              </div>
               <div style={{ width: '200px' }}>{contact.phoneNumber}</div>
               <div style={{ width: '400px' }}>{contact.notes}</div>
             </div>
-          ))}
+            )
+          })}
         </div>
         </div> {/* end of page-container */}
       </div>

@@ -145,5 +145,34 @@
     gap: 10px;
   }
 
- 
+ .red {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid black;
+ }
+
+ .yellow {
+  background-color: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid black;
+ }
+
+ .green {
+  background-color: green;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid black;
+ }
+
   

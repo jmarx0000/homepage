@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link, useNavigate } from 'react-router-dom'; // Import Link from react-router-dom
 import { db } from '../Configuration/firebase'; 
 import { collection, addDoc } from 'firebase/firestore';
 import { useAuth } from '../Functions/AuthContext';
@@ -9,11 +9,13 @@ import { useUserData } from '../Functions/UserData';
 const AddContactForm = ({cancelRoute}) => {
   // Form state
   const { contacts, setContacts, fetchContacts } = useUserData();
+  const navigate = useNavigate();
 
 
   const [contact, setContact] = useState({
     fullName: 'Jordan Marx',
     firmName: 'Morgan Stanley',
+    division: 'M&A',
     position: 'Analyst',
     lastReachOut: '2024-06-22', // Hardcoded date for testing
     email: 'jordan.marx@morganstanley.com', // Hardcoded email for testing
@@ -40,6 +42,7 @@ const AddContactForm = ({cancelRoute}) => {
       const docRef = await addDoc(collection(db, `users/${user.uid}/contacts`), {
         fullName: contact.fullName,
         firmName: contact.firmName,
+        division: contact.division,
         position: contact.position,
         lastReachOut: contact.lastReachOut,
         email: contact.email,
@@ -50,6 +53,7 @@ const AddContactForm = ({cancelRoute}) => {
       setContacts([...contacts, { id: docRef.id, ...contact }]);
       fetchContacts();
       console.log("Document written with ID: ", docRef.id);
+      navigate('/all-contacts'); // Navigate to the all-contacts page after submission
     } catch (e) {
       console.error("Error adding document: ", e);
     }
@@ -58,6 +62,7 @@ const AddContactForm = ({cancelRoute}) => {
     setContact({
       fullName: '',
       firmName: '',
+      division: '',
       position: '',
       lastReachOut: '',
       email: '',
@@ -92,6 +97,18 @@ const AddContactForm = ({cancelRoute}) => {
             onChange={handleInputChange}
             required
             placeholder="Firm Name"
+          />
+        </div>
+
+        <div>
+          <label>Industy / Division</label>
+          <input
+            type="text"
+            name="division"
+            value={contact.division}
+            onChange={handleInputChange}
+            required
+            placeholder="Industry / Division"
           />
         </div>
 
@@ -152,7 +169,7 @@ const AddContactForm = ({cancelRoute}) => {
           />
         </div>
         <button className="button-primary" type="submit">Add Contact</button>
-        <Link to='/'>
+        <Link to='/all-contacts'>
             <button className="button-cancel" type="button">Cancel</button>
         </Link>
       </form>

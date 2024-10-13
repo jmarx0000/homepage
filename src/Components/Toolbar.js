@@ -2,10 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Styles/Toolbar.css';
 import { useAuth } from '../Functions/AuthContext.js';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Toolbar = () => {
 
     const { logOut, signInWithGoogle, user } = useAuth(); // Use the signInWithGoogle function from the AuthContext
+    const navigate = useNavigate();
+
+    // when user signs out, navigates them to home page
+    useEffect(() => {
+        if (!user) {
+            navigate('/');
+        }
+    }, [user, navigate]);
 
     return (
         <div className='toolbar-container'>
